@@ -2,6 +2,8 @@ from random import randint
 
 
 def pick_a_number():
+    """ Get number form user
+    Validate if input is an int"""
     while True:
         try:
             player_number = int(input("Pick a number: "))
@@ -12,6 +14,8 @@ def pick_a_number():
 
 
 def pick_a_numbers():
+    """ Creating list of 6 numbers
+    Validate if numbers are correct"""
     player_numbers = []
     while len(player_numbers) < 6:
         player_number = pick_a_number()
@@ -24,6 +28,9 @@ def pick_a_numbers():
 
 
 def lotto_main():
+    """ Main function
+    Generating 6 number list
+    Checking match with player numbers"""
     lotto_numbers = [randint(1, 49) for _ in range(6)]
     lotto_numbers.sort()
     player_numbers = pick_a_numbers()

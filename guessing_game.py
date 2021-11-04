@@ -15,6 +15,8 @@ def pick_a_number():
 
 
 def guess_the_number():
+    """ Main function
+    compares player guesses with computer rolls"""
     comp_roll = random.randint(1, 100)
     player_guess = pick_a_number()
     while True:
