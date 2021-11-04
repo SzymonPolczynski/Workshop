@@ -1,3 +1,6 @@
+from random import randint
+
+
 def pick_a_number():
     while True:
         try:
@@ -12,16 +15,30 @@ def pick_a_numbers():
     player_numbers = []
     while len(player_numbers) < 6:
         player_number = pick_a_number()
-        if player_number not in player_numbers and player_number > 0 and player_number < 49:
+        if player_number not in player_numbers and 0 < player_number < 49:
             player_numbers.append(player_number)
         else:
             print("Wrong number!")
-            pick_a_number()
-    return player_numbers.sort()
+    player_numbers.sort()
+    return player_numbers
+
 
 def lotto_main():
-    print(f"Your numbers are: {pick_a_numbers()}")
-
+    lotto_numbers = [randint(1, 49) for _ in range(6)]
+    lotto_numbers.sort()
+    player_numbers = pick_a_numbers()
+    print(f"Your numbers: {player_numbers}")
+    print(f"Drawn numbers: {lotto_numbers}")
+    matched_numbers = []
+    for number in player_numbers:
+        if number in lotto_numbers:
+            matched_numbers.append(number)
+    if len(matched_numbers) >= 3:
+        print(f"You scored {len(matched_numbers)} numbers. You won!")
+    elif len(matched_numbers) == 2:
+        print(f"You scored {len(matched_numbers)} numbers. You lost!")
+    else:
+        print(f"You scored {len(matched_numbers)} number. You lost!")
 
 
 if __name__ == '__main__':
