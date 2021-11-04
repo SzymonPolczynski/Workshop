@@ -3,15 +3,15 @@ import random
 
 def pick_a_number():
     """ Get number form user
-    Validate if input is a int"""
+    Validate if input is an int"""
     while True:
         try:
-            result = int(input("Guess the number: "))
+            player_number = int(input("Guess the number: "))
             break
         except ValueError:
             print("It's not a number!")
 
-    return result
+    return player_number
 
 
 def guess_the_number():
