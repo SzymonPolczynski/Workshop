@@ -5,6 +5,7 @@ time.sleep(5)
 
 
 def player_number():
+    """Validate if player answer is correct"""
     answers = ["too small", "too big", 'you win']
     while True:
         player_answer = input().lower()
@@ -16,6 +17,8 @@ def player_number():
 
 
 def guessing_game_2():
+    """Main function
+    Checking player answer and adapting further guesses"""
     minimum = 0
     maximum = 1000
     player_answer = ""
