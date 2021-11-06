@@ -60,7 +60,7 @@ WIN = """<!DOCTYPE html>
 
 
 @app.route("/", methods=["GET", "POST"])
-def guess_the_number():
+def guessing_game_3():
     if request.method == "GET":
         return START.format(0, 1000)
     else:
