@@ -1,5 +1,9 @@
 from flask import Flask, request
-
+"""Guessing Game based on Flask framework
+Divided into three HTML blocks:
+1st - introducing to user also takes hidden inputs of min/max number range
+2nd - using POST method form to gain user answers
+3rd - announcing computer victory"""
 
 app = Flask(__name__)
 
@@ -61,6 +65,8 @@ WIN = """<!DOCTYPE html>
 
 @app.route("/", methods=["GET", "POST"])
 def guessing_game_3():
+    """Main function
+    process user inputs to get final answer"""
     if request.method == "GET":
         return START.format(0, 1000)
     else:
