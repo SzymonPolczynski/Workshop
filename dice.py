@@ -4,6 +4,9 @@ DICES = ("D3", "D4", "D6", "D8", "D10", "D12", "D20", "D100")
 
 
 def rolling_dice(dice_spec):
+    """Main function body checks if user input dice is in dice-set given
+    Function also analise dice code checking for dice multiplyer and modifier
+    Validates input for incorrect dice code"""
     for dice in DICES:
         if dice in dice_spec:
             try:
