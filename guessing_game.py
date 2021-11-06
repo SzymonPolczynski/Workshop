@@ -2,7 +2,7 @@ import random
 
 
 def pick_a_number():
-    """ Get number form user
+    """ Get number from user
     Validate if input is an int"""
     while True:
         try:
